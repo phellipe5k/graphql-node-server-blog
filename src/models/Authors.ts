@@ -9,6 +9,8 @@ class Author {
         return instance;
     }
     
+    @prop()
+    id: string = '';
 
     @prop()
     name: string = '';
@@ -19,7 +21,7 @@ class Author {
     @prop()
     biography: string = '';
 
-    @prop()
+    @prop({default: 0})
     followers: number = 0;
 
     @prop({ items: Post, default: [] })

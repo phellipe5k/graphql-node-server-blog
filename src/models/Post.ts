@@ -1,5 +1,4 @@
-const { prop } = require('typegoose');
-import { getModelForClass } from '@typegoose/typegoose';
+import { prop, getModelForClass } from '@typegoose/typegoose';
 import * as mongoose from 'mongoose';
 
 class Post {
@@ -10,7 +9,10 @@ class Post {
     }
 
     @prop()
-    author_id: string = '';
+    id: string;
+
+    @prop()
+    author_id: string;
 
     @prop()
     title: string = '';
@@ -19,7 +21,7 @@ class Post {
     content_html: string = '';
 
     @prop()
-    likes: number =  0;
+    likes?: number =  0;
 }
 
 const PostModel = getModelForClass(Post,  {

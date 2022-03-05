@@ -12,7 +12,7 @@ const types = gql`
 
     type Post {
         id: ID!
-        author_id: ID!,
+        author_id: String,
         title: String,
         content_html: String,
         likes: Int
